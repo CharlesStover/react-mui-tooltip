@@ -1,15 +1,26 @@
 {
   "name": "react-mui-tooltip",
   "version": "0.0.1",
-  "description": "Create React tooltips similar to those used in Material-UI.",
-  "main": "index.js",
-  "repository": "https://github.com/CharlesStover/react-mui-tooltip.git",
   "author": "Charles Stover <npmjs@charlesstover.com>",
-  "license": "MIT",
+  "description": "Create React tooltips similar to those used in Material-UI.",
   "devDependencies": {
     "@babel/preset-env": "^7.0.0-rc.1",
     "@babel/preset-react": "^7.0.0-rc.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "peerDependencies": {
+    "react": "16.4.2",
+    "react-dom": "1"
+  },
+  "repository": "https://github.com/CharlesStover/react-mui-tooltip.git",
+  "scripts": {
+    "build": "webpack",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"No tests defined.\""
   }
 }

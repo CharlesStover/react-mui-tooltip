@@ -5,3 +5,4 @@
 /.npmignore
 /.travis.yml
 /webpack.config.js
+/yarn-error.log
