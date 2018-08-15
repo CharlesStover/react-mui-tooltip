@@ -1,11 +1,6 @@
-import withStyles from '@material-ui/core/styles/withStyles';
-
 const BACKGROUND_SHADE = 700;
-const FONT_SIZE = 12;
-const HALF = 0.5;
-const LINE_HEIGHT = 1.4;
 
-export default withStyles(theme => ({
+export default {
   root: {
 
     // The root needs to be inline-block, so that the max-width can be 100%.
@@ -19,22 +14,22 @@ export default withStyles(theme => ({
     display: 'none'
   },
   open: {
-    backgroundColor: theme.palette.grey[BACKGROUND_SHADE],
+    backgroundColor: '#606060',
     borderRadius: 2,
     boxSizing: 'content-box',
-    color: theme.palette.common.white,
+    color: '#F0F0F0',
     cursor: 'default',
-    fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.pxToRem(FONT_SIZE),
+    fontFamily: '"Roboto Condensed", "Roboto", "Verdana", sans-serif',
+    fontSize: 12,
     fontWeight: 500,
     left: '-100%',
-    lineHeight: theme.typography.round(LINE_HEIGHT) + 'em',
+    lineHeight: '1.4em',
     opacity: 1,
-    paddingBottom: theme.spacing.unit * HALF,
-    paddingLeft: theme.spacing.unit,
-    paddingTop: theme.spacing.unit * HALF,
+    paddingBottom: 4,
+    paddingLeft: 8,
+    paddingTop: 4,
     position: 'absolute',
     width: 'max-content',
     zIndex: 1500
   }
-}));
+};

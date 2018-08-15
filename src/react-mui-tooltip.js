@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import createPortal from './create-portal';
-import withStyles from './react-mui-tooltip-styles';
+import styles from './react-mui-tooltip-styles';
 
 const EVENT_LISTENER_OPTIONS = {
   passive: true
@@ -9,7 +9,7 @@ const EVENT_LISTENER_OPTIONS = {
 
 const HALF = 0.5;
 
-class MuiTooltip extends React.PureComponent {
+export default class MuiTooltip extends React.PureComponent {
 
   // On Window touch, if the target is not a child of the open tooltip, close it.
   static handleTouchStart(e) {
@@ -176,12 +176,12 @@ class MuiTooltip extends React.PureComponent {
     return ReactDOM.createPortal(
       <div
         children={this.props.title}
-        className={
-          this.state.open ?
-            this.props.classes.open :
-            this.props.classes.closed
-        }
         ref={this.handleTooltipRef}
+        style={
+          this.state.open ?
+            styles.open :
+            styles.closed
+        }
       />,
       this.portalRef
     );
@@ -190,13 +190,13 @@ class MuiTooltip extends React.PureComponent {
   render() {
     return (
       <span
-        className={this.props.classes.root}
         onBlur={this.handleBlur}
         onFocus={this.handleFocus}
         onMouseLeave={this.handleMouseLeave}
         onMouseOver={this.handleMouseOver}
         onTouchStart={this.handleTouchStart}
         ref={this.handleRootRef}
+        style={styles.root}
       >
         {this.tooltip}
         {this.props.children}
@@ -204,5 +204,3 @@ class MuiTooltip extends React.PureComponent {
     );
   }
 }
-
-export default withStyles(MuiTooltip);
